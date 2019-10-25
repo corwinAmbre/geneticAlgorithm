@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>TensorFlow.js Tutorial</title>
+
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<!-- Import TensorFlow.js -->
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
+	<!-- Import tfjs-vis -->
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis@1.0.2/dist/tfjs-vis.umd.min.js"></script>
+
+	<!-- Import the main script file -->
+	<script src="script_mnist.js" type="module"></script>
+	<script src="script.js" type="module"></script>
+
+	<link rel="stylesheet" href="knacss.css"/>
+	<link rel="stylesheet" href="layout.css"/>
+
+</head>
+
+<body>
+	<nav class="header">
+		<h1>Genetic algorithm test</h1>
+		<div>Status: <span id="status-info">Idle</span>
+	</nav>
+	<nav class="setup">
+		<h2>Setup</h2>
+		<label for="setup-population-size">
+			Population size:
+		</label>
+		<input id="setup-population-size" type="number" min="1" required="required" value="1"/>
+		<label for="setup-max-round">
+			Max number of rounds:
+		</label>
+		<input id="setup-max-round" type="number" min="1" required="required" value="1"/>
+		<button id="launchBtn">Run</button>
+	</nav>
+	<article>
+	</article>
+	<div id="debug">
+	</div>
+</body>
+</html>
