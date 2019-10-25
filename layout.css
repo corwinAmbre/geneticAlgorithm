@@ -32,7 +32,6 @@ h1 {
 
 article {
 	grid-area: c;
-	background-color: black;
 }
 
 #debug {
@@ -45,4 +44,28 @@ input:invalid {
 
 input:focus:invalid {
 	outline: none;
+}
+
+#main-run {
+	display: none;
+	flex-flow: column nowrap;
+}
+
+#genetic-train-progress-bar {
+	display: flex;
+	flex-flow: row nowrap;
+	height: 20px;
+	width: 400px;
+}
+
+#genetic-to-train {
+	background-color: grey;
+}
+
+#genetic-train-on-going {
+	background-color: yellow;
+}
+
+#genetic-trained {
+	background-color: green;
 }
