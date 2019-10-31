@@ -141,7 +141,7 @@ export class MnistData {
  */
 
 export class Cnn {
-    constructor(modelSetup) {
+    constructor(modelSetup, epoch, creationMethod) {
 		this.setup = Object.assign({
 			kernelSize: 5,
 			filters: 8,
@@ -155,6 +155,8 @@ export class Cnn {
 			optimizer: tf.train.adam()
 		}, modelSetup);
 		this.score = null;
+		this.epoch = epoch;
+		this.creationMethod = creationMethod;
 	}
 
     getModel() {
@@ -231,7 +233,7 @@ export class Cnn {
                 height: '1000px'
             }
         };
-        const fitCallbacks = tfvis.show.fitCallbacks(container, metrics);
+        //const fitCallbacks = tfvis.show.fitCallbacks(container, metrics);
 
         const BATCH_SIZE = 512;
         const TRAIN_DATA_SIZE = 5500;
@@ -258,7 +260,8 @@ export class Cnn {
             validationData: [testXs, testYs],
             epochs: 10,
             shuffle: true,
-            callbacks: fitCallbacks
+			callbacks: null
+            //callbacks: fitCallbacks
         });
     }
 
@@ -288,7 +291,7 @@ export class Cnn {
             name: 'Accuracy',
             tab: 'Evaluation'
         };
-        tfvis.show.perClassAccuracy(container, classAccuracy, classNames);
+        //tfvis.show.perClassAccuracy(container, classAccuracy, classNames);
 		
 
         labels.dispose();
